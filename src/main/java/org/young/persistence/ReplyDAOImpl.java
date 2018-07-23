@@ -15,9 +15,9 @@ public class ReplyDAOImpl implements ReplyDAO {
 	@Inject
 	private SqlSession session;
 
-	private static String namespace = "com.nuritelecom.mapper.ReplyMapper";
+	private static String namespace = "org.young.mapper.ReplyMapper";
 
-	
+
 	@Override
 	public void create(ReplyVO vo) throws Exception {
 		session.insert(namespace + ".create", vo);
@@ -38,6 +38,6 @@ public class ReplyDAOImpl implements ReplyDAO {
 		return session.selectList(namespace + ".listAll");
 	}
 
-	
+
 
 }

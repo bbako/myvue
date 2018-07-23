@@ -13,34 +13,34 @@ import org.young.domain.FileVO;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
-	
+
 
 	@Inject
 	private SqlSession session;
-	
+
 	/*@Inject
 	private FileUtil fileUtils;
 */
 
-	private static String namespace = "com.nuritelecom.mapper.BoardMapper";
+	private static String namespace = "org.young.mapper.BoardMapper";
 
 	@Override
 	public void create(BoardVO vo, MultipartHttpServletRequest multi) throws Exception {
-		
+
 		/*int a = session.insert(namespace + ".create", vo);
 		Object result = fileUtils.parseInsertFileInfo(vo, multi);*/
-		
+
 	}
 	@Override
 	public void create2(BoardVO vo) throws Exception {
-		
+
 		session.insert(namespace + ".create", vo);
-		
+
 	}
 
 	@Override
 	public BoardVO read(Integer bno) throws Exception {
-		
+
 		return session.selectOne(namespace + ".read", bno);
 	}
 
